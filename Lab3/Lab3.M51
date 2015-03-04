@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        03/03/2015  18:36:26  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/03/2015  18:39:59  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -22,8 +22,8 @@ LINK MAP OF MODULE:  Lab3 (?C_STARTUP)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-* OVERLAP * CODE    0000H     009BH     ABSOLUTE     
-                    009BH     0765H                  *** GAP ***
+* OVERLAP * CODE    0000H     009EH     ABSOLUTE     
+                    009EH     0762H                  *** GAP ***
             CODE    0800H     000CH     UNIT         ?C_C51STARTUP
 
 
@@ -59,7 +59,7 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
   C:0800H         SYMBOL        STARTUP1
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/03/2015  18:36:26  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/03/2015  18:39:59  PAGE 2
 
 
   N:0000H         SYMBOL        XBPSTACK
@@ -76,101 +76,99 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        LAB3
-  C:0061H         SYMBOL        CHECK
-  C:008EH         SYMBOL        DELAY
-  C:0094H         SYMBOL        LP1
-  C:0092H         SYMBOL        LP2
-  C:0090H         SYMBOL        LP3
-  C:000AH         SYMBOL        MAIN
-  C:001AH         SYMBOL        N1
-  C:0025H         SYMBOL        N2
-  C:0030H         SYMBOL        N3
-  C:003BH         SYMBOL        N4
-  C:0046H         SYMBOL        N5
-  C:0051H         SYMBOL        N6
+  C:0064H         SYMBOL        CHECK
+  C:0091H         SYMBOL        DELAY
+  C:0097H         SYMBOL        LP1
+  C:0095H         SYMBOL        LP2
+  C:0093H         SYMBOL        LP3
+  C:000DH         SYMBOL        MAIN
+  C:001DH         SYMBOL        N1
+  C:0028H         SYMBOL        N2
+  C:0033H         SYMBOL        N3
+  C:003EH         SYMBOL        N4
+  C:0049H         SYMBOL        N5
+  C:0054H         SYMBOL        N6
   D:0080H         SYMBOL        P0
   D:0090H         SYMBOL        P1
   D:00A0H         SYMBOL        P2
-  D:00B0H         SYMBOL        P3
-  C:0059H         SYMBOL        PATTERN1
-  C:007DH         SYMBOL        PATTERN2
-  C:006AH         SYMBOL        ROTATE
-  C:0075H         SYMBOL        RROTATE
+  C:005CH         SYMBOL        PATTERN1
+  C:0080H         SYMBOL        PATTERN2
+  C:006DH         SYMBOL        ROTATE
+  C:0078H         SYMBOL        RROTATE
   C:0000H         LINE#         2
   C:0002H         LINE#         3
   C:0004H         LINE#         4
   C:0007H         LINE#         5
-  C:000AH         LINE#         8
-  C:000CH         LINE#         9
-  C:000EH         LINE#         10
-  C:0010H         LINE#         11
-  C:0012H         LINE#         12
+  C:000AH         LINE#         6
+  C:000DH         LINE#         9
+  C:000FH         LINE#         10
+  C:0011H         LINE#         11
+  C:0013H         LINE#         12
   C:0015H         LINE#         13
   C:0018H         LINE#         14
-  C:001AH         LINE#         19
-  C:001CH         LINE#         20
+  C:001BH         LINE#         15
+  C:001DH         LINE#         20
   C:001FH         LINE#         21
   C:0022H         LINE#         22
-  C:0025H         LINE#         24
-  C:0027H         LINE#         25
+  C:0025H         LINE#         23
+  C:0028H         LINE#         25
   C:002AH         LINE#         26
   C:002DH         LINE#         27
-  C:0030H         LINE#         29
-  C:0032H         LINE#         30
+  C:0030H         LINE#         28
+  C:0033H         LINE#         30
   C:0035H         LINE#         31
   C:0038H         LINE#         32
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/03/2015  18:36:26  PAGE 3
+  C:003BH         LINE#         33
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/03/2015  18:39:59  PAGE 3
 
 
-  C:003BH         LINE#         34
-  C:003DH         LINE#         35
+  C:003EH         LINE#         35
   C:0040H         LINE#         36
   C:0043H         LINE#         37
-  C:0046H         LINE#         39
-  C:0048H         LINE#         40
+  C:0046H         LINE#         38
+  C:0049H         LINE#         40
   C:004BH         LINE#         41
   C:004EH         LINE#         42
-  C:0051H         LINE#         44
-  C:0053H         LINE#         45
+  C:0051H         LINE#         43
+  C:0054H         LINE#         45
   C:0056H         LINE#         46
-  C:0059H         LINE#         49
-  C:005AH         LINE#         50
+  C:0059H         LINE#         47
+  C:005CH         LINE#         50
   C:005DH         LINE#         51
-  C:005EH         LINE#         52
-  C:0061H         LINE#         56
-  C:0062H         LINE#         57
+  C:0060H         LINE#         52
+  C:0061H         LINE#         53
+  C:0064H         LINE#         57
   C:0065H         LINE#         58
-  C:0067H         LINE#         59
-  C:006AH         LINE#         61
-  C:006BH         LINE#         62
-  C:006DH         LINE#         63
-  C:006EH         LINE#         64
-  C:006FH         LINE#         65
-  C:0070H         LINE#         66
-  C:0072H         LINE#         67
-  C:0075H         LINE#         69
-  C:0076H         LINE#         70
-  C:0077H         LINE#         71
-  C:0078H         LINE#         72
-  C:007AH         LINE#         73
-  C:007DH         LINE#         75
-  C:007EH         LINE#         76
-  C:0080H         LINE#         77
-  C:0081H         LINE#         78
-  C:0082H         LINE#         79
-  C:0084H         LINE#         80
-  C:0085H         LINE#         81
-  C:0087H         LINE#         83
-  C:0088H         LINE#         84
-  C:0089H         LINE#         85
-  C:008BH         LINE#         86
-  C:008EH         LINE#         89
-  C:0090H         LINE#         90
-  C:0092H         LINE#         91
-  C:0094H         LINE#         92
-  C:0096H         LINE#         93
-  C:0098H         LINE#         94
-  C:009AH         LINE#         95
+  C:0068H         LINE#         59
+  C:006AH         LINE#         60
+  C:006DH         LINE#         62
+  C:006EH         LINE#         63
+  C:0070H         LINE#         64
+  C:0071H         LINE#         65
+  C:0072H         LINE#         66
+  C:0073H         LINE#         67
+  C:0075H         LINE#         68
+  C:0078H         LINE#         70
+  C:0079H         LINE#         71
+  C:007AH         LINE#         72
+  C:007BH         LINE#         73
+  C:007DH         LINE#         74
+  C:0080H         LINE#         76
+  C:0082H         LINE#         77
+  C:0083H         LINE#         78
+  C:0085H         LINE#         79
+  C:0087H         LINE#         80
+  C:0088H         LINE#         81
+  C:008AH         LINE#         82
+  C:008CH         LINE#         83
+  C:008EH         LINE#         84
+  C:0091H         LINE#         87
+  C:0093H         LINE#         88
+  C:0095H         LINE#         89
+  C:0097H         LINE#         90
+  C:0099H         LINE#         91
+  C:009BH         LINE#         92
+  C:009DH         LINE#         93
   -------         ENDMOD        LAB3
 
 *** WARNING L5: CODE SPACE MEMORY OVERLAP
@@ -179,10 +177,10 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
 
 *** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
     SYMBOL:  ?C_START
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/03/2015  18:36:26  PAGE 4
-
-
     MODULE:  STARTUP.obj (?C_STARTUP)
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/03/2015  18:39:59  PAGE 4
+
 
 *** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
     SYMBOL:  ?C_START
@@ -190,8 +188,8 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
     ADDRESS: 080AH
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00AAH BYTE ( 8%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00ADH BYTE ( 8%) *
 ******************************************************************************
 
-Program Size: data=9.0 xdata=0 code=170
+Program Size: data=9.0 xdata=0 code=173
 LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

@@ -73,16 +73,13 @@ PATTERN1: 	mov A, R0
 						mov P1,A
 						LJMP MAIN
 		  
-PATTERN2:	mov A, R6
-			ANL A,#11110000b
+PATTERN2:	mov A,10
 			RL	A
-			mov R7,A
-			mov P3,R7
-			mov A, R6
-			ANL A,#00001111b
-			;RRC	A
-			ADD A,R7
-			mov R6,A
+			mov 10,A
+			mov A,11
+			RR	A
+			mov 11,A
+			ADD A,10
 			mov P1,A
 			LJMP MAIN
 			

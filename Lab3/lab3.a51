@@ -1,41 +1,45 @@
 			ORG 000
 			mov R0,#11000000b
+			mov R6,#00011000b
+			mov 10,#00010000b
+			mov 11,#00001000b
 			LJMP MAIN
 			
 MAIN: 		;LJMP PATTERN1
 			mov A,P0
-			ANL A,#000000111b
+			ANL A,#11100000b
 			mov P2,A
 			ACALL DELAY
-			CJNE A,#001b,N1
+			CJNE A,#20H,N1
 			LJMP PATTERN1
 			SJMP MAIN
 			;CJNE A,#001,N1
 			;LJMP PATTERN1
 			;JMP MAIN
+			
 N1:		mov P2,A
-		CJNE A,#010b,N2
-		mov P1,#00000010b
+		CJNE A,#040H,N2
+		LJMP PATTERN2
 		LJMP MAIN
 		
 N2:		mov P2,A
-		CJNE A,#011b,N3
-		mov P1,#00000011b
+		CJNE A,#060H,N3
+		mov P1,#060H
 		LJMP MAIN
 		
 N3:		mov P2,A
-		CJNE A,#100b,N4
-		mov P1,#00000100b
+		CJNE A,#080H,N4
+		mov P1,#080H
 		LJMP MAIN
 		
 N4:		mov P2,A
-		CJNE A,#101b,N5
-		mov P1,#00000101b
+		CJNE A,#0A0H,N5
+		mov P1,#0A0H
 		LJMP MAIN
 		
 N5:		mov P2,A
-		CJNE A,#110b,N6
-		mov P1,#00000110b
+		CJNE A,#0C0H,N6
+		mov P1,#0C0H
 		LJMP MAIN
 		
 N6:		mov P2,A
@@ -69,7 +73,19 @@ PATTERN1: 	mov A, R0
 						mov P1,A
 						LJMP MAIN
 		  
-
+PATTERN2:	mov A, R6
+			ANL A,#11110000b
+			RL	A
+			mov R7,A
+			mov P3,R7
+			mov A, R6
+			ANL A,#00001111b
+			;RRC	A
+			ADD A,R7
+			mov R6,A
+			mov P1,A
+			LJMP MAIN
+			
 
 DELAY: mov r5,#30H
 lp3:   mov r4,#0FFH

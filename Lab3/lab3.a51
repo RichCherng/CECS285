@@ -1,8 +1,9 @@
 			ORG 000
 			mov R0,#11000000b
-			mov R6,#00011000b
+			mov R6,#00011100b
 			mov 10,#00010000b
 			mov 11,#00001000b
+			mov 12,#1
 			LJMP MAIN
 			
 MAIN: 		;LJMP PATTERN1
@@ -19,27 +20,32 @@ MAIN: 		;LJMP PATTERN1
 			
 N1:		mov P2,A
 		CJNE A,#040H,N2
+		mov P1,#040H
 		LJMP PATTERN2
 		LJMP MAIN
 		
 N2:		mov P2,A
 		CJNE A,#060H,N3
 		mov P1,#060H
+		LJMP PATTERN2
 		LJMP MAIN
 		
 N3:		mov P2,A
 		CJNE A,#080H,N4
 		mov P1,#080H
+		LJMP PATTERN4
 		LJMP MAIN
 		
 N4:		mov P2,A
 		CJNE A,#0A0H,N5
 		mov P1,#0A0H
+		LJMP PATTERN5
 		LJMP MAIN
 		
 N5:		mov P2,A
 		CJNE A,#0C0H,N6
 		mov P1,#0C0H
+		LJMP PATTERN6
 		LJMP MAIN
 		
 N6:		mov P2,A
@@ -83,6 +89,28 @@ PATTERN2:	mov A,10
 			mov P1,A
 			LJMP MAIN
 			
+PATTERN4:	
+			mov A, 12
+			CPL A
+			mov 12, A
+			CJNE A,#11111110b,SHOW
+			mov P1,#01010101b
+			LJMP MAIN
+			
+			SHOW:	mov P1,#10101010b
+					LJMP MAIN
+		
+PATTERN5: 	mov P1,R6
+			mov A, R6
+			RL	A
+			mov R6,A
+			LJMP MAIN
+			
+PATTERN6: 	mov P1,R6
+			mov A, R6
+			RR	A
+			mov R6,A
+			LJMP MAIN
 
 DELAY: mov r5,#30H
 lp3:   mov r4,#0FFH

@@ -1,0 +1,59 @@
+A51 MACRO ASSEMBLER  LAB2                                                                 02/12/2015 17:12:03 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN lab2.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab2.a51 SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 020100            1     LJMP    main
+                       2     
+0100                   3     ORG     0100H
+                       4     
+0100                   5     MAIN:
+                       6     
+0100 7590AA            7     MOV     P1,#0AAH        ;8 LEDS OFF
+                       8     
+0103 310D              9     ACALL   DelAY   ;STAY .5 SEC
+                      10     
+0105 759055           11     MOV     P1,#055H        ;8 LEDS ON
+                      12     
+0108 310D             13     ACALL   Delay   ;STAY .5 SEC
+                      14     
+010A 020100           15     LJMP MAIN
+                      16     
+010D 7B30             17     Delay:  mov     r3,#30H
+                      18     
+010F 7AFF             19     lp3:    mov     r2,#0FFH
+                      20     
+0111 79FF             21     lp2:    mov     r1,#0FFH
+                      22     
+0113 D9FE             23     lp1:    djnz    r1,lp1
+                      24     
+0115 DAFA             25     djnz    r2,lp2
+                      26     
+0117 DBF6             27     djnz    r3,lp3
+                      28     
+0119 22               29     RET
+                      30     end
+A51 MACRO ASSEMBLER  LAB2                                                                 02/12/2015 17:12:03 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   010DH   A   
+LP1. . . . . . . .  C ADDR   0113H   A   
+LP2. . . . . . . .  C ADDR   0111H   A   
+LP3. . . . . . . .  C ADDR   010FH   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

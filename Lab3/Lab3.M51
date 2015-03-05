@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        03/04/2015  18:14:51  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/04/2015  18:31:28  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -22,8 +22,8 @@ LINK MAP OF MODULE:  Lab3 (?C_STARTUP)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-* OVERLAP * CODE    0000H     0138H     ABSOLUTE     
-                    0138H     06C8H                  *** GAP ***
+* OVERLAP * CODE    0000H     014CH     ABSOLUTE     
+                    014CH     06B4H                  *** GAP ***
             CODE    0800H     000CH     UNIT         ?C_C51STARTUP
 
 
@@ -59,7 +59,7 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
   C:0800H         SYMBOL        STARTUP1
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:14:51  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:31:28  PAGE 2
 
 
   N:0000H         SYMBOL        XBPSTACK
@@ -79,10 +79,10 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
   C:006DH         SYMBOL        CHECK
   C:00B3H         SYMBOL        CHECKB
   C:00BBH         SYMBOL        DECREMENT
-  C:00ECH         SYMBOL        DELAY
-  C:0131H         SYMBOL        LP1
-  C:012FH         SYMBOL        LP2
-  C:012DH         SYMBOL        LP3
+  C:0100H         SYMBOL        DELAY
+  C:0145H         SYMBOL        LP1
+  C:0143H         SYMBOL        LP2
+  C:0141H         SYMBOL        LP3
   C:0013H         SYMBOL        MAIN
   C:0023H         SYMBOL        N1
   C:002EH         SYMBOL        N2
@@ -106,22 +106,23 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
   C:00A1H         SYMBOL        RANDB
   C:0076H         SYMBOL        ROTATE
   C:0081H         SYMBOL        RROTATE
-  C:00F8H         SYMBOL        S2
-  C:0100H         SYMBOL        S3
-  C:0108H         SYMBOL        S4
-  C:0110H         SYMBOL        S5
-  C:0118H         SYMBOL        S6
-  C:0120H         SYMBOL        S7
-  C:0128H         SYMBOL        S8
+  C:010CH         SYMBOL        S2
+  C:0114H         SYMBOL        S3
+  C:011CH         SYMBOL        S4
+  C:0124H         SYMBOL        S5
+  C:012CH         SYMBOL        S6
+  C:0134H         SYMBOL        S7
+  C:013CH         SYMBOL        S8
   C:00D6H         SYMBOL        SHOW
+  C:00FAH         SYMBOL        SHOWP7
   C:0000H         LINE#         2
   C:0002H         LINE#         3
   C:0004H         LINE#         4
   C:0007H         LINE#         5
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:31:28  PAGE 3
+
+
   C:000AH         LINE#         6
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:14:51  PAGE 3
-
-
   C:000DH         LINE#         7
   C:0010H         LINE#         8
   C:0013H         LINE#         11
@@ -178,10 +179,10 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
   C:0089H         LINE#         79
   C:008BH         LINE#         80
   C:008CH         LINE#         81
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:31:28  PAGE 4
+
+
   C:008EH         LINE#         82
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:14:51  PAGE 4
-
-
   C:0090H         LINE#         83
   C:0091H         LINE#         84
   C:0093H         LINE#         85
@@ -229,40 +230,48 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
   C:00E7H         LINE#         142
   C:00E8H         LINE#         143
   C:00E9H         LINE#         144
-  C:00ECH         LINE#         148
-  C:00EEH         LINE#         149
-  C:00F0H         LINE#         151
-  C:00F3H         LINE#         152
-  C:00F5H         LINE#         153
-  C:00F8H         LINE#         154
-  C:00FBH         LINE#         155
-  C:00FDH         LINE#         156
-  C:0100H         LINE#         157
-  C:0103H         LINE#         158
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:14:51  PAGE 5
+  C:00ECH         LINE#         146
+  C:00EEH         LINE#         147
+  C:00EFH         LINE#         148
+  C:00F1H         LINE#         149
+  C:00F4H         LINE#         150
+  C:00F7H         LINE#         151
+  C:00FAH         LINE#         153
+  C:00FDH         LINE#         154
+  C:0100H         LINE#         156
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/04/2015  18:31:28  PAGE 5
 
 
-  C:0105H         LINE#         159
-  C:0108H         LINE#         160
-  C:010BH         LINE#         161
-  C:010DH         LINE#         162
-  C:0110H         LINE#         163
-  C:0113H         LINE#         164
-  C:0115H         LINE#         165
-  C:0118H         LINE#         166
-  C:011BH         LINE#         167
-  C:011DH         LINE#         168
-  C:0120H         LINE#         169
-  C:0123H         LINE#         170
-  C:0125H         LINE#         171
-  C:0128H         LINE#         172
-  C:012BH         LINE#         173
-  C:012DH         LINE#         175
-  C:012FH         LINE#         176
-  C:0131H         LINE#         177
-  C:0133H         LINE#         178
-  C:0135H         LINE#         179
-  C:0137H         LINE#         180
+  C:0102H         LINE#         157
+  C:0104H         LINE#         159
+  C:0107H         LINE#         160
+  C:0109H         LINE#         161
+  C:010CH         LINE#         162
+  C:010FH         LINE#         163
+  C:0111H         LINE#         164
+  C:0114H         LINE#         165
+  C:0117H         LINE#         166
+  C:0119H         LINE#         167
+  C:011CH         LINE#         168
+  C:011FH         LINE#         169
+  C:0121H         LINE#         170
+  C:0124H         LINE#         171
+  C:0127H         LINE#         172
+  C:0129H         LINE#         173
+  C:012CH         LINE#         174
+  C:012FH         LINE#         175
+  C:0131H         LINE#         176
+  C:0134H         LINE#         177
+  C:0137H         LINE#         178
+  C:0139H         LINE#         179
+  C:013CH         LINE#         180
+  C:013FH         LINE#         181
+  C:0141H         LINE#         183
+  C:0143H         LINE#         184
+  C:0145H         LINE#         185
+  C:0147H         LINE#         186
+  C:0149H         LINE#         187
+  C:014BH         LINE#         188
   -------         ENDMOD        LAB3
 
 *** WARNING L5: CODE SPACE MEMORY OVERLAP
@@ -279,8 +288,8 @@ SYMBOL TABLE OF MODULE:  Lab3 (?C_STARTUP)
     ADDRESS: 080AH
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0147H BYTE (15%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 015BH BYTE (16%) *
 ******************************************************************************
 
-Program Size: data=9.0 xdata=0 code=327
+Program Size: data=9.0 xdata=0 code=347
 LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

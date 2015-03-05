@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:14:51 PAGE     1
+A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:31:28 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.02b
@@ -17,7 +17,7 @@ LOC  OBJ            LINE     SOURCE
 0010 020013            8                             LJMP MAIN
                        9                             
 0013                  10     MAIN:           ;LJMP PATTERN1
-0013 11EC             11                             ACALL DELAY
+0013 3100             11                             ACALL DELAY
 0015 E580             12                             mov A,P0
 0017 54E0             13                             ANL A,#11100000b
 0019 F5A0             14                             mov P2,A
@@ -55,7 +55,7 @@ LOC  OBJ            LINE     SOURCE
 005A 020013           46                     LJMP MAIN
                       47                     
 005D F5A0             48     N6:             mov P2,A
-005F 759007           49                     mov P1,#00000111b
+005F 0200EC           49                     LJMP PATTERN7
 0062 020013           50                     LJMP MAIN               
                       51                             
                       52                     
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
 006A 020076           56                             LJMP ROTATE
                       57                             ;ANL A,#11000000b
                       58                             ;JZ  CHANGE
-A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:14:51 PAGE     2
+A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:31:28 PAGE     2
 
                       59                             
 006D E8               60                             CHECK:          mov A,R0
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
 00C5 020013          121                                     LJMP MAIN
                      122                             
 00C8                 123     PATTERN4:       
-A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:14:51 PAGE     3
+A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:31:28 PAGE     3
 
 00C8 E50C            124                             mov A, 12
 00CA F4              125                             CPL A
@@ -157,45 +157,55 @@ LOC  OBJ            LINE     SOURCE
 00E8 FE              143                             mov R6,A
 00E9 020013          144                             LJMP MAIN
                      145     
-00EC                 146     PATTERN7:   
-                     147     
-00EC E580            148     DELAY:          mov A, p0
-00EE 5407            149                             ANL A,#00000111b
-                     150                             
-00F0 B40005          151                             CJNE A,#00000000b,s2
-00F3 7DA0            152                             mov r5,#0A0H
-00F5 02012D          153                             LJMP lp3
-00F8 B40105          154             s2:             CJNE A,#00000001b, s3
-00FB 7D90            155                             mov r5,#090H
-00FD 02012D          156                             LJMP lp3
-0100 B40205          157             s3:             CJNE A,#00000010b, s4
-0103 7D80            158                             mov r5,#080H
-0105 02012D          159                             LJMP lp3
-0108 B40305          160             s4:             CJNE A,#00000011b, s5
-010B 7D70            161                             mov r5,#070H
-010D 02012D          162                             LJMP lp3
-0110 B40405          163             s5:             CJNE A,#00000100b, s6
-0113 7D60            164                             mov r5,#060H
-0115 02012D          165                             LJMP lp3
-0118 B40505          166             s6:             CJNE A,#00000101b, s7
-011B 7D50            167                             mov r5,#050H
-011D 02012D          168                             LJMP lp3
-0120 B40605          169             s7:             CJNE A,#00000110b, s8
-0123 7D40            170                             mov r5,#040H
-0125 02012D          171                             LJMP lp3
-0128 B407D5          172             s8:             CJNE A,#00000111b, s3
-012B 7D30            173                             mov r5,#030H
-                     174     
-012D 7CFF            175     lp3:            mov r4,#0FFH
-012F 7BFF            176     lp2:            mov r3,#0FFH
-0131 DBFE            177     lp1:            djnz r3,lp1
-0133 DCFA            178                             djnz r4,lp2
-0135 DDF6            179                             djnz r5,lp3
-0137 22              180                             RET
-                     181                
-                     182                
-*** WARNING #A41 IN 182 (lab3.a51, LINE 182): MISSING 'END' STATEMENT
-A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:14:51 PAGE     4
+00EC E50C            146     PATTERN7:   mov A, 12
+00EE F4              147                             CPL A
+00EF F50C            148                             mov 12, A
+00F1 B4FE06          149                             CJNE A,#11111110b,SHOWP7
+00F4 7590F0          150                             mov P1,#11110000b
+00F7 020013          151                             LJMP MAIN
+                     152                             
+00FA 75900F          153                             SHOWP7: mov P1,#00001111b
+00FD 020013          154                                             LJMP MAIN
+                     155     
+0100 E580            156     DELAY:          mov A, p0
+0102 5407            157                             ANL A,#00000111b
+                     158                             
+0104 B40005          159                             CJNE A,#00000000b,s2
+0107 7DA0            160                             mov r5,#0A0H
+0109 020141          161                             LJMP lp3
+010C B40105          162             s2:             CJNE A,#00000001b, s3
+010F 7D90            163                             mov r5,#090H
+0111 020141          164                             LJMP lp3
+0114 B40205          165             s3:             CJNE A,#00000010b, s4
+0117 7D80            166                             mov r5,#080H
+0119 020141          167                             LJMP lp3
+011C B40305          168             s4:             CJNE A,#00000011b, s5
+011F 7D70            169                             mov r5,#070H
+0121 020141          170                             LJMP lp3
+0124 B40405          171             s5:             CJNE A,#00000100b, s6
+0127 7D60            172                             mov r5,#060H
+0129 020141          173                             LJMP lp3
+012C B40505          174             s6:             CJNE A,#00000101b, s7
+012F 7D50            175                             mov r5,#050H
+0131 020141          176                             LJMP lp3
+0134 B40605          177             s7:             CJNE A,#00000110b, s8
+0137 7D40            178                             mov r5,#040H
+0139 020141          179                             LJMP lp3
+013C B407D5          180             s8:             CJNE A,#00000111b, s3
+013F 7D30            181                             mov r5,#030H
+                     182     
+0141 7CFF            183     lp3:            mov r4,#0FFH
+0143 7BFF            184     lp2:            mov r3,#0FFH
+0145 DBFE            185     lp1:            djnz r3,lp1
+0147 DCFA            186                             djnz r4,lp2
+0149 DDF6            187                             djnz r5,lp3
+014B 22              188                             RET
+                     189                
+A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:31:28 PAGE     4
+
+                     190                
+*** WARNING #A41 IN 190 (lab3.a51, LINE 190): MISSING 'END' STATEMENT
+A51 MACRO ASSEMBLER  LAB3                                                                 03/04/2015 18:31:28 PAGE     5
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -206,10 +216,10 @@ N A M E             T Y P E  V A L U E   ATTRIBUTES
 CHECK. . . . . . .  C ADDR   006DH   A   
 CHECKB . . . . . .  C ADDR   00B3H   A   
 DECREMENT. . . . .  C ADDR   00BBH   A   
-DELAY. . . . . . .  C ADDR   00ECH   A   
-LP1. . . . . . . .  C ADDR   0131H   A   
-LP2. . . . . . . .  C ADDR   012FH   A   
-LP3. . . . . . . .  C ADDR   012DH   A   
+DELAY. . . . . . .  C ADDR   0100H   A   
+LP1. . . . . . . .  C ADDR   0145H   A   
+LP2. . . . . . . .  C ADDR   0143H   A   
+LP3. . . . . . . .  C ADDR   0141H   A   
 MAIN . . . . . . .  C ADDR   0013H   A   
 N1 . . . . . . . .  C ADDR   0023H   A   
 N2 . . . . . . . .  C ADDR   002EH   A   
@@ -233,14 +243,15 @@ RAND . . . . . . .  C ADDR   009AH   A
 RANDB. . . . . . .  C ADDR   00A1H   A   
 ROTATE . . . . . .  C ADDR   0076H   A   
 RROTATE. . . . . .  C ADDR   0081H   A   
-S2 . . . . . . . .  C ADDR   00F8H   A   
-S3 . . . . . . . .  C ADDR   0100H   A   
-S4 . . . . . . . .  C ADDR   0108H   A   
-S5 . . . . . . . .  C ADDR   0110H   A   
-S6 . . . . . . . .  C ADDR   0118H   A   
-S7 . . . . . . . .  C ADDR   0120H   A   
-S8 . . . . . . . .  C ADDR   0128H   A   
+S2 . . . . . . . .  C ADDR   010CH   A   
+S3 . . . . . . . .  C ADDR   0114H   A   
+S4 . . . . . . . .  C ADDR   011CH   A   
+S5 . . . . . . . .  C ADDR   0124H   A   
+S6 . . . . . . . .  C ADDR   012CH   A   
+S7 . . . . . . . .  C ADDR   0134H   A   
+S8 . . . . . . . .  C ADDR   013CH   A   
 SHOW . . . . . . .  C ADDR   00D6H   A   
+SHOWP7 . . . . . .  C ADDR   00FAH   A   
 
 
 REGISTER BANK(S) USED: 0 

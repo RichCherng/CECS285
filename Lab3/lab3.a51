@@ -46,7 +46,7 @@ N5:		mov P2,A
 		LJMP MAIN
 		
 N6:		mov P2,A
-		mov P1,#00000111b
+		LJMP PATTERN7
 		LJMP MAIN		
 			
 		
@@ -143,7 +143,15 @@ PATTERN6: 	mov P1,R6
 			mov R6,A
 			LJMP MAIN
 
-PATTERN7:   
+PATTERN7:   mov A, 12
+			CPL A
+			mov 12, A
+			CJNE A,#11111110b,SHOWP7
+			mov P1,#11110000b
+			LJMP MAIN
+			
+			SHOWP7:	mov P1,#00001111b
+					LJMP MAIN
 
 DELAY: 		mov A, p0
 			ANL A,#00000111b

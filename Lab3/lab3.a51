@@ -8,10 +8,10 @@
 			LJMP MAIN
 			
 MAIN: 		;LJMP PATTERN1
+			ACALL DELAY
 			mov A,P0
 			ANL A,#11100000b
 			mov P2,A
-			ACALL DELAY
 			CJNE A,#20H,N1
 			LJMP PATTERN1
 			SJMP MAIN
@@ -98,6 +98,7 @@ PATTERN3:
 				mov A, 50H
 				RLC A
 				mov 50H, A
+				
 				mov p3,50H
 				mov R7,50H
 				;check for 3 bits
@@ -142,12 +143,40 @@ PATTERN6: 	mov P1,R6
 			mov R6,A
 			LJMP MAIN
 
-DELAY: mov r5,#30H
-lp3:   mov r4,#0FFH
-lp2:   mov r3,#0FFH
-lp1:   djnz r3,lp1
-       djnz r4,lp2
-	   djnz r5,lp3
-	   RET
+PATTERN7:   
+
+DELAY: 		mov A, p0
+			ANL A,#00000111b
+			
+			CJNE A,#00000000b,s2
+			mov r5,#0A0H
+			LJMP lp3
+	s2:		CJNE A,#00000001b, s3
+			mov r5,#090H
+			LJMP lp3
+	s3:		CJNE A,#00000010b, s4
+			mov r5,#080H
+			LJMP lp3
+	s4:		CJNE A,#00000011b, s5
+			mov r5,#070H
+			LJMP lp3
+	s5:		CJNE A,#00000100b, s6
+			mov r5,#060H
+			LJMP lp3
+	s6:		CJNE A,#00000101b, s7
+			mov r5,#050H
+			LJMP lp3
+	s7:		CJNE A,#00000110b, s8
+			mov r5,#040H
+			LJMP lp3
+	s8:		CJNE A,#00000111b, s3
+			mov r5,#030H
+
+lp3: 	  	mov r4,#0FFH
+lp2:  		mov r3,#0FFH
+lp1:   		djnz r3,lp1
+			djnz r4,lp2
+			djnz r5,lp3
+			RET
 	   
 	   

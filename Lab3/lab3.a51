@@ -26,7 +26,7 @@ N1:		mov P2,A
 		
 N2:		mov P2,A
 		CJNE A,#060H,N3
-		LJMP PATTERN2
+		LJMP PATTERN3
 		LJMP MAIN
 		
 N3:		mov P2,A
@@ -98,29 +98,25 @@ PATTERN3:
 				mov A, 50H
 				RLC A
 				mov 50H, A
-				mov 14,50H
-				mov 15,#00H ;counter couting bit
-				mov 13,#08H ;counter for 8 loops
-				
-			
+				mov p3,50H
+				mov R7,50H
+				;check for 3 bits
+				mov R1,#00H ;counter couting bit
+				mov R2,#08H ;counter for 8 loops
 	CHECKB:		mov A, 50H
-				mov p3, 50H
 				RLC A
 				mov 50H, A
 				JNC Decrement
-				INC 15
-				CLR c
+				INC R1
 				
 				;Decrement loop counter without INC bit counter
 	Decrement:	
-				mov p3, 13
-				mov p3, 15
-				mov A, 15
-				DJNZ 13, CHECKB
+				DJNZ R2, CHECKB
+				mov 50H,R7
+				mov A, R1
 				;if random number contain only 3 bit then pass
 				CJNE A,#03H,RAND
-				mov P1, 14
-				mov 50H, 14
+				mov P1, R7
 				LJMP MAIN
 			
 PATTERN4:	

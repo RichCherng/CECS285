@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 13:08:16 PAGE     1
+A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 16:35:32 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.02b
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
 0054 E8               51                             mov A, R0
 0055 23               52                             RL A
 0056 F8               53                             mov R0,A
-A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 13:08:16 PAGE     2
+A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 16:35:32 PAGE     2
 
 0057 F590             54                             mov P1,A
 0059 020013           55                             LJMP MAIN
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
 00B4 8E90            115     PATTERN5:       mov P1,R6
 00B6 EE              116                             mov A, R6
 00B7 23              117                             RL      A
-A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 13:08:16 PAGE     3
+A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 16:35:32 PAGE     3
 
 00B8 FE              118                             mov R6,A
 00B9 020013          119                             LJMP MAIN
@@ -197,7 +197,7 @@ LOC  OBJ            LINE     SOURCE
                      177                
                      178                
 *** WARNING #A41 IN 178 (lab3.a51, LINE 178): MISSING 'END' STATEMENT
-A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 13:08:16 PAGE     4
+A51 MACRO ASSEMBLER  LAB3                                                                 03/05/2015 16:35:32 PAGE     4
 
 SYMBOL TABLE LISTING
 ------ ----- -------
